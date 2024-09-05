@@ -40,7 +40,10 @@ public class Tilemap : Transformable, Drawable
     public void Tick()
     {
         if (_currentPath.Count == 0)
+        {
+            Console.WriteLine("No unvisited tiles left");
             return;
+        }
 
         Tile currentPos = _currentPath.Peek();
 
