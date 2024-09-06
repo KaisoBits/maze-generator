@@ -4,10 +4,10 @@ using SFML.Window;
 using MazeGenerator;
 
 Vector2i atlasSize = new(12, 21);
-Vector2i gridSize = new(70, 70);
+Vector2i gridSize = new(32, 32);
 Texture tex = new("Resources/tilemap.png");
 
-RenderWindow window = new(new VideoMode(1600, 1280), "Wave function collapse");
+RenderWindow window = new(new VideoMode(1600, 1280), "Maze generator");
 View view = new(new Vector2f(), new Vector2f(1600, 1280));
 window.SetView(view);
 
@@ -68,7 +68,7 @@ window.KeyPressed += (s, e) =>
     {
         if (e.Control)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 4; i++)
                 tilemap.Tick();
         }
         else
